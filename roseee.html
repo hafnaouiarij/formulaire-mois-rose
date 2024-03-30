@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire mois rose</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #F5B7B1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #F1948A;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .container p {
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    form {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input,
+    textarea {
+      width: calc(100% - 24px);
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #FF1493;
+    }
+
+    button {
+      background-color: #FF1493; /* Rose */
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 20px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #EC7063; 
+    }
+
+    .flower {
+      position: absolute;
+      top: -100px;
+      animation: openFlower 2s ease-out forwards;
+    }
+
+    @keyframes openFlower {
+      0% {
+        transform: translateY(-100px) scale(0);
+      }
+      100% {
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .closing {
+      animation: closeFlower 2s ease-out forwards;
+    }
+
+    @keyframes closeFlower {
+      0% {
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        transform: translateY(-100px) scale(0);
+      }
+    }
+
+    /* Animation de mouvement des fleurs */
+    @keyframes moveFlowerLeft {
+      0% {
+        transform: translateX(-5px);
+      }
+      50% {
+        transform: translateX(5px);
+      }
+      100% {
+        transform: translateX(-5px);
+      }
+    }
+
+    @keyframes moveFlowerRight {
+      0% {
+        transform: translateX(5px);
+      }
+      50% {
+        transform: translateX(-5px);
+      }
+      100% {
+        transform: translateX(5px);
+      }
+    }
+
+    .flower-left {
+      left: -50px;
+      animation: moveFlowerLeft 5s infinite;
+    }
+
+    .flower-right {
+      right: -50px;
+      animation: moveFlowerRight 5s infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CONTACTEZ-NOUS</h1>
+    <p>OCTOBRE ROSE<br></p>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="nom">Nom complet :</label>
+        <input type="text" class="form-control" id="nom" name="nom" placeholder="Votre nom complet">
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail :</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Votre adresse e-mail">
+      </div>
+      <div class="form-group">
+        <label for="message">Message :</label>
+        <textarea class="form-control" id="message" name="message" rows="3" placeholder="Voulez-vous laisser un message ?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-danger">Envoyer</button>
+      <img src="https://emojicdn.elk.sh/🎗️" alt="flower" class="flower flower-buttom-left">
+      <img src="https://emojicdn.elk.sh/🌸" alt="flower" class="flower flower-left">
+    </form>
+  </div>
+</body>
+</html>
